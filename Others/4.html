@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Time Conversion and Timer</title>
+</head>
+<body>
+  <h2>Current IST Time:</h2>
+  <p id="istTime" style="font-weight: bold; font-size: 18px;"></p>
+
+  <button onclick="convertToUTC()">Convert Local Time to UTC</button>
+  <br><br>
+
+  <button onclick="startTimer()">Start Timer (shows time after 3 seconds)</button>
+
+  <script>
+
+    function displayISTTime() {
+      const now = new Date();
+
+  
+      const istOffset = 5.5 * 60 * 60 * 1000;
+      const istTime = new Date(now.getTime() + istOffset - (now.getTimezoneOffset() * 60000));
+
+      document.getElementById("istTime").innerText = istTime.toLocaleString('en-IN', {
+        timeZone: 'Asia/Kolkata',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+      });
+    }
+
+ 
+    function convertToUTC() {
+      const localDate = new Date();
+      const utcDate = localDate.toUTCString();
+      alert("UTC Date and Time: " + utcDate);
+    }
+
+
+    function startTimer() {
+      setTimeout(function () {
+        const currentDate = new Date();
+        alert("Current Date and Time: " + currentDate.toString());
+      }, 3000);
+    }
+
+
+    setInterval(displayISTTime, 1000);
+    displayISTTime();
+  </script>
+</body>
+</html>

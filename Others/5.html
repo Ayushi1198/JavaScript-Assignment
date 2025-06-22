@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Image Change on Click</title>
+</head>
+<body>
+
+  <h2>Click on the image to change it:</h2>
+
+  <img 
+    id="myImage" 
+    src="https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+    alt="Click to change image" 
+    onclick="changeImage()" 
+    style="cursor: pointer;"
+  >
+
+  <script>
+    function changeImage() {
+      const image = document.getElementById("myImage");
+
+
+      image.src = "https://images.unsplash.com/photo-1542640244-7e672d6cef4e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+    }
+  </script>
+
+</body>
+</html>

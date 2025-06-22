@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Insert and Style Paragraph</title>
+  <style>
+    .highlight {
+      color: white;
+      background-color: teal;
+      font-weight: bold;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <p id="para1">This is the first paragraph.</p>
+  <p id="para2">This is the second paragraph.</p>
+
+  <script>
+    let newPara = document.createElement("p");
+    newPara.id = "newPara";
+    newPara.textContent = "This is the inserted paragraph.";
+
+    let p1 = document.getElementById("para1");
+    let p2 = document.getElementById("para2");
+    p1.parentNode.insertBefore(newPara, p2);
+
+
+    newPara.addEventListener("click", function() {
+      newPara.className = "highlight";
+    });
+
+
+    newPara.addEventListener("dblclick", function() {
+      newPara.className = "";
+    });
+  </script>
+
+</body>
+</html>

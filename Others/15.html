@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mad Libs Game</title>
+</head>
+<body>
+
+<script>
+  const userName = prompt("Enter your name:");
+  const word2 = prompt("Enter a forest name:");
+  const word3 = prompt("Enter an hero name:");
+  const word4 = prompt("Enter a weapon:");
+  const color = prompt("Enter a color name or hex value:");
+
+  function colorWord(word) {
+    return `<span style="color:${color}; font-weight:bold;">${word}</span>`;
+  }
+
+  document.write(`<h2>Hello, ${userName}!</h2>`);
+  document.write(`<p>Once upon a time, ${colorWord(word3)} decided to go ${colorWord(word2)} through the boat.</p>`);
+  document.write(`<p>On the way, he found a magical ${colorWord(word4)} that changed everything.</p>`);
+  document.write(`<p>From that day on, ${colorWord(word3)} lived happily ever after in the land of ${colorWord(word2)}.</p>`);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Marble Animation</title>
+  <style>
+    body {
+      height: 100vh;
+      background: #f0f0f0;
+      position: relative;
+      overflow: hidden;
+    }
+    .marble {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    #red {
+      background-color: red;
+    }
+    #green {
+      background-color: green;
+    }
+    #blue {
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="marble" id="red"></div>
+  <div class="marble" id="green"></div>
+  <div class="marble" id="blue"></div>
+
+  <script>
+    const marbles = [
+      { el: document.getElementById("red"), x: 0, speed: 2 },
+      { el: document.getElementById("green"), x: 100, speed: 3 },
+      { el: document.getElementById("blue"), x: 200, speed: 4 }
+    ];
+
+    let animation;
+
+    function moveMarbles() {
+      marbles.forEach(marble => {
+        marble.x += marble.speed;
+        if (marble.x > window.innerWidth) marble.x = -50;
+        marble.el.style.left = marble.x + 'px';
+      });
+      animation = setTimeout(moveMarbles, 20);
+    }
+
+    moveMarbles();
+
+    marbles.forEach(marble => {
+      marble.el.addEventListener("mouseenter", () => {
+        clearTimeout(animation); // Pause animation
+      });
+
+      marble.el.addEventListener("mouseleave", () => {
+        moveMarbles(); // Resume animation
+      });
+    });
+  </script>
+
+</body>
+</html>

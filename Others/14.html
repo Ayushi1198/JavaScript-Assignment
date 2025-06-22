@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Visit Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    img {
+      width: 300px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to My Website!</h1>
+  <p id="visitMessage"></p>
+  <img src="https://images.unsplash.com/photo-1542640244-7e672d6cef4e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?text=Welcome!" alt="Sample Image">
+
+  <script>
+  
+    function getCookie(name) {
+      let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+      return match ? decodeURIComponent(match[2]) : null;
+    }
+
+
+    function setCookie(name, value, days = 365) {
+      let date = new Date();
+      date.setTime(date.getTime() + (days*24*60*60*1000));
+      let expires = "expires=" + date.toUTCString();
+      document.cookie = name + "=" + encodeURIComponent(value) + ";" + expires + ";path=/";
+    }
+
+
+    let visits = parseInt(getCookie("visitCount")) || 0;
+    let lastVisit = getCookie("lastVisit");
+
+    visits += 1;
+    setCookie("visitCount", visits);
+    setCookie("lastVisit", new Date().toLocaleString());
+
+    let message = "";
+    if (visits === 1) {
+      message = "This is your first visit! Welcome!";
+    } else {
+      message = `You have visited ${visits} times. Your last visit was on ${lastVisit}.`;
+    }
+
+    document.getElementById("visitMessage").textContent = message;
+  </script>
+
+</body>
+</html>

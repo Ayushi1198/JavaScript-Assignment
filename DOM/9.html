@@ -1,0 +1,19 @@
+<select id="mySelect">
+  <option>Red</option>
+  <option>Green</option>
+  <option>Blue</option>
+  <option>White</option>
+</select>
+<input type="button" onclick="getOptions()" value="Count and Output all items">
+
+<script>
+function getOptions() {
+  let select = document.getElementById("mySelect");
+  let count = select.options.length;
+  let values = [];
+  for (let i = 0; i < count; i++) {
+    values.push(select.options[i].text);
+  }
+  alert("Total: " + count + "\nItems: " + values.join(", "));
+}
+</script>

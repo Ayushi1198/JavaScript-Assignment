@@ -1,0 +1,16 @@
+<button onclick="showRandomImage()">Show Random Image</button>
+<br><img id="randomImg" width="300" height="200">
+
+<script>
+const images = [
+  "http://farm4.staticflickr.com/3691/11268502654_f28f05966c_m.jpg",
+  "http://farm1.staticflickr.com/33/45336904_1aef569b30_n.jpg",
+  "http://farm6.staticflickr.com/5211/5384592886_80a512e2c9.jpg"
+];
+
+function showRandomImage() {
+  let img = document.getElementById("randomImg");
+  let randomIndex = Math.floor(Math.random() * images.length);
+  img.src = images[randomIndex];
+}
+</script>

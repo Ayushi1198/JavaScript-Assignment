@@ -1,0 +1,17 @@
+<p><a href="#" onmouseover="highlight()" onmouseout="removeHighlight()">Hover here</a></p>
+<p>We have just started this section for the users <b>(beginner to intermediate)</b> who want to work with various <b>JavaScript problems</b>.</p>
+
+<script>
+function highlight() {
+  let boldWords = document.getElementsByTagName("b");
+  for (let word of boldWords) {
+    word.style.backgroundColor = "yellow";
+  }
+}
+function removeHighlight() {
+  let boldWords = document.getElementsByTagName("b");
+  for (let word of boldWords) {
+    word.style.backgroundColor = "";
+  }
+}
+</script>

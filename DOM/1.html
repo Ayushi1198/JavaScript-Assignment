@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>JS DOM paragraph style</title>
+  <style>
+    #text {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <p id="text">JavaScript Exercises - w3resource</p>
+
+  <div>
+    <button id="jsstyle" onclick="js_style()">Style</button>
+  </div>
+
+  <script>
+    function js_style() {
+      let para = document.getElementById("text");
+      para.style.color = "white";
+      para.style.backgroundColor = "blue";
+      para.style.fontSize = "20px";
+      para.style.fontFamily = "Arial, sans-serif";
+      para.style.padding = "10px";
+      para.style.borderRadius = "8px";
+    }
+  </script>
+
+</body>
+</html>

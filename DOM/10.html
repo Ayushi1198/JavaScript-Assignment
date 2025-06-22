@@ -1,0 +1,14 @@
+<form onsubmit="calculateVolume(event)">
+  Radius: <input type="number" id="radius">
+  <input type="submit" value="Calculate Volume">
+  <p id="result"></p>
+</form>
+
+<script>
+function calculateVolume(event) {
+  event.preventDefault();
+  let r = document.getElementById("radius").value;
+  let volume = (4 / 3) * Math.PI * Math.pow(r, 3);
+  document.getElementById("result").innerText = "Volume: " + volume.toFixed(2);
+}
+</script>

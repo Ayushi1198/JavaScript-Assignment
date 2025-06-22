@@ -1,0 +1,16 @@
+<table id="myTable" border="1">
+  <tr><td>Row1 cell1</td><td>Row1 cell2</td></tr>
+  <tr><td>Row2 cell1</td><td>Row2 cell2</td></tr>
+  <tr><td>Row3 cell1</td><td>Row3 cell2</td></tr>
+</table><br>
+<input type="button" onclick="changeContent()" value="Change content">
+
+<script>
+function changeContent() {
+  let row = prompt("Enter row index (0-based):");
+  let col = prompt("Enter column index (0-based):");
+  let newText = prompt("Enter new cell content:");
+  let table = document.getElementById("myTable");
+  table.rows[row].cells[col].innerHTML = newText;
+}
+</script>

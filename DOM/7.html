@@ -1,0 +1,18 @@
+<table id="myTable" border="1"></table><br>
+<input type="button" onclick="createTable()" value="Create the table">
+
+<script>
+function createTable() {
+  let rows = prompt("Enter number of rows:");
+  let cols = prompt("Enter number of columns:");
+  let table = document.getElementById("myTable");
+  table.innerHTML = "";
+  for (let i = 0; i < rows; i++) {
+    let tr = table.insertRow();
+    for (let j = 0; j < cols; j++) {
+      let td = tr.insertCell();
+      td.innerHTML = "Row-" + i + " Column-" + j;
+    }
+  }
+}
+</script>

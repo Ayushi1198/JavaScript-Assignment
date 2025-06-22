@@ -1,0 +1,11 @@
+<p id="sizeInfo"></p>
+
+<script>
+function updateSize() {
+  let w = window.innerWidth;
+  let h = window.innerHeight;
+  document.getElementById("sizeInfo").innerText = `Width: ${w}, Height: ${h}`;
+}
+window.onresize = updateSize;
+window.onload = updateSize;
+</script>

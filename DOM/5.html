@@ -1,0 +1,16 @@
+<table id="sampleTable" border="1">
+  <tr><td>Row1 cell1</td><td>Row1 cell2</td></tr>
+  <tr><td>Row2 cell1</td><td>Row2 cell2</td></tr>
+</table><br>
+<input type="button" onclick="insert_Row()" value="Insert row">
+
+<script>
+function insert_Row() {
+  let table = document.getElementById("sampleTable");
+  let newRow = table.insertRow(0);
+  let cell1 = newRow.insertCell(0);
+  let cell2 = newRow.insertCell(1);
+  cell1.innerHTML = "New Row1";
+  cell2.innerHTML = "New Row2";
+}
+</script>

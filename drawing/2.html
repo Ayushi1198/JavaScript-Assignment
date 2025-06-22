@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Draw Circle</title>
+</head>
+<body style="text-align: center; padding-top: 50px;">
+
+  <canvas id="myCanvas" width="150" height="150" style="background: #f5f5f5;"></canvas>
+
+  <script>
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    ctx.strokeStyle = "red";
+    ctx.lineWidth = 3;
+
+    ctx.beginPath();
+    ctx.arc(75, 75, 50, 0, 2 * Math.PI);
+    ctx.stroke();
+  </script>
+
+</body>
+</html>

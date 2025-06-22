@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Right-Angled Triangle</title>
+</head>
+<body style="text-align:center; padding-top:50px;">
+
+  <canvas id="triangleCanvas" width="120" height="120" style="background:#f5f5f5;"></canvas>
+
+  <script>
+    const canvas = document.getElementById("triangleCanvas");
+    const ctx = canvas.getContext("2d");
+
+    ctx.beginPath();
+    ctx.moveTo(20, 20);   
+    ctx.lineTo(20, 100); 
+    ctx.lineTo(100, 100);
+    ctx.closePath();  
+
+    ctx.fillStyle = "black";
+    ctx.fill();
+  </script>
+
+</body>
+</html>

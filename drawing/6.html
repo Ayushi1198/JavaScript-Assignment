@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smiley Face with moveTo</title>
+</head>
+<body>
+<canvas id="myCanvas" width="300" height="300"style="background:#f5f5f5;"></canvas>
+
+<script>
+  const canvas = document.getElementById("myCanvas");
+  const ctx = canvas.getContext("2d");
+
+  // Draw face
+  ctx.beginPath();
+  ctx.arc(150, 150, 100, 0, Math.PI * 2);
+  ctx.stroke();
+
+  // Draw eyes
+  ctx.beginPath();
+  ctx.arc(115, 120, 10, 0, Math.PI * 2); // Left eye
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.arc(185, 120, 10, 0, Math.PI * 2); // Right eye
+  ctx.stroke();
+
+  // Connect eyes
+  ctx.beginPath();
+  ctx.moveTo(105, 120);
+  ctx.lineTo(195, 120); 
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.arc(150, 155, 68, 0, Math.PI, false);
+  ctx.stroke();
+</script>
+
+</body>
+</html>

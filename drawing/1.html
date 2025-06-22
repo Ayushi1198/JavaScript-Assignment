@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Draw Rectangular Shape</title>
+</head>
+<body style="text-align:center; padding-top:50px;">
+
+  <canvas id="myCanvas" width="150" height="150"></canvas>
+
+  <script>
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+
+    ctx.fillStyle = "black";
+    ctx.fillRect(0, 0, 350, 350);
+
+    ctx.fillStyle = "white";
+    ctx.fillRect(25, 25, 100, 100);
+
+    ctx.strokeStyle = "gray";
+    ctx.lineWidth = 2;
+    ctx.strokeRect(40, 40, 70, 70);
+  </script>
+
+</body>
+</html>
